@@ -1,0 +1,73 @@
+﻿{
+    "test_case":  "TC-001",
+    "user_story":  "As a developer, I want the application to scan Python source files and generate a Markdown document listing them, so that I can quickly understand what source files are present in the project.",
+    "created_at":  "2026-09-23T10:32:07Z",
+    "phases":  {
+                   "1":  {
+                             "status":  "APPROVED",
+                             "name":  "Requirements",
+                             "output_archive":  "outputs/TC-001/phase-1-requirements/output.md",
+                             "phase_folder":  "phase-1-requirements",
+                             "completed_at":  "2026-09-23T10:32:00Z",
+                             "decided_at":  "2026-09-23T10:35:07Z"
+                         },
+                   "2":  {
+                             "status":  "APPROVED",
+                             "name":  "Architecture",
+                             "output_archive":  "outputs/TC-001/phase-2-architecture/output.md",
+                             "phase_folder":  "phase-2-architecture",
+                             "completed_at":  "2026-09-23T10:37:00Z",
+                             "decided_at":  "2026-09-23T10:38:41Z"
+                         },
+                   "3":  {
+                             "status":  "APPROVED",
+                             "name":  "Design Review",
+                             "output_archive":  "outputs/TC-001/phase-3-design-review/output.md",
+                             "phase_folder":  "phase-3-design-review",
+                             "completed_at":  "2026-09-23T10:42:00Z",
+                             "decided_at":  "2026-09-23T10:40:38Z"
+                         },
+                   "4":  {
+                             "status":  "APPROVED",
+                             "name":  "Implementation Planning",
+                             "output_archive":  "outputs/TC-001/phase-4-impl-planning/output.md",
+                             "phase_folder":  "phase-4-impl-planning",
+                             "completed_at":  "2026-09-23T11:00:00Z",
+                             "decided_at":  "2026-09-23T11:15:35Z"
+                         },
+                   "5":  {
+                             "status":  "APPROVED",
+                             "name":  "Implementation",
+                             "output_archive":  "outputs/TC-001/phase-5-implementation/output.md",
+                             "phase_folder":  "phase-5-implementation",
+                             "completed_at":  "2026-09-23T11:24:00Z",
+                             "decided_at":  "2026-09-23T11:24:13Z"
+                         },
+                   "6":  {
+                             "status":  "APPROVED",
+                             "name":  "Code Review",
+                             "output_archive":  "outputs/TC-001/phase-6-code-review/output.md",
+                             "phase_folder":  "phase-6-code-review",
+                             "completed_at":  "2026-09-23T11:35:00Z",
+                             "decided_at":  "2026-09-23T11:29:19Z"
+                         },
+                   "7":  {
+                             "status":  "APPROVED",
+                             "name":  "Verification",
+                             "output_archive":  "outputs/TC-001/phase-7-verification/output.md",
+                             "phase_folder":  "phase-7-verification",
+                             "completed_at":  "2026-09-23T11:45:00Z",
+                             "decided_at":  "2026-09-23T11:32:02Z"
+                         },
+                   "8":  {
+                             "status":  "APPROVED",
+                             "name":  "PR Creation",
+                             "output_archive":  "outputs/TC-001/phase-8-pr/output.md",
+                             "phase_folder":  "phase-8-pr",
+                             "completed_at":  "2026-09-23T12:00:00Z",
+                             "decided_at":  "2026-09-23T11:35:30Z"
+                         }
+               },
+    "pipeline_status":  "PIPELINE_COMPLETE",
+    "pr_url":  "https://github.com/VasanthiGadam05/github_sdlc/pull/1"
+}

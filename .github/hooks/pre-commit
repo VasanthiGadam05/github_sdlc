@@ -1,0 +1,59 @@
+#!/bin/sh
+# docsync pre-commit hook — enforces Agentic SDLC discipline.
+# Installed into .git/hooks/pre-commit by scripts/install-git-hooks.ps1.
+# Runs on every `git commit`. Exits non-zero (blocking the commit) on violation.
+
+set -e
+
+STAGED=$(git diff --cached --name-only --diff-filter=ACM)
+
+if [ -z "$STAGED" ]; then
+    exit 0
+fi
+
+fail=0
+
+# 1. Block obvious hardcoded secrets in staged content.
+SECRET_HITS=$(git diff --cached -U0 -- . | grep -E '^\+' | grep -viE '^\+\+\+' | grep -iE '(password|api[_-]?key|secret|token)\s*[:=]\s*["\047][A-Za-z0-9_\-]{8,}' || true)
+if [ -n "$SECRET_HITS" ]; then
+    echo "pre-commit: BLOCKED — possible hardcoded secret in staged changes:"
+    echo "$SECRET_HITS"
+    fail=1
+fi
+
+# 2. Block direct edits to the committed baseline requirements.md at repo root.
+if echo "$STAGED" | grep -qx "requirements.md"; then
+    echo "pre-commit: BLOCKED — requirements.md (repo root) is the approved v1"
+    echo "baseline and must not be edited directly. New requirements belong in"
+    echo "docs/<TC-XXX>/requirements.md via the Phase 1 prompt."
+    fail=1
+fi
+
+# 3. If source under src/docsync/ is staged, require at least one docs/TC-*/
+#    phase-status entry to show Phase 5 (Implementation) as APPROVED.
+SRC_STAGED=$(echo "$STAGED" | grep '^src/docsync/' || true)
+if [ -n "$SRC_STAGED" ]; then
+    APPROVED_FOUND=0
+    for f in outputs/TC-*/phase-status.json; do
+        [ -e "$f" ] || continue
+        if grep -q '"5"' "$f" 2>/dev/null && grep -A3 '"5"' "$f" | grep -q '"APPROVED"'; then
+            APPROVED_FOUND=1
+        fi
+    done
+    if [ "$APPROVED_FOUND" -eq 0 ]; then
+        echo "pre-commit: BLOCKED — changes under src/docsync/ are staged, but no"
+        echo "test case has an APPROVED Phase 5 (Implementation). Run:"
+        echo "  scripts\\approve-phase.ps1 -Phase 5 -Decision APPROVED -TestCase <TC>"
+        echo "before committing implementation code."
+        fail=1
+    fi
+fi
+
+if [ "$fail" -ne 0 ]; then
+    echo ""
+    echo "Commit blocked by pre-commit hook. Fix the issues above, or in a true"
+    echo "emergency use 'git commit --no-verify' (discouraged, bypasses SDLC checks)."
+    exit 1
+fi
+
+exit 0
