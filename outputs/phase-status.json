@@ -1,0 +1,10 @@
+﻿{
+    "test_cases":  {
+                       "TC-001":  {
+                                      "created_at":  "2026-09-23T10:32:07Z",
+                                      "user_story":  "As a developer, I want the application to scan Python source files and generate a Markdown document listing them, so that I can quickly understand what source files are present in the project.",
+                                      "status_file":  "outputs/TC-001/phase-status.json"
+                                  }
+                   },
+    "active_test_cases":  "TC-001"
+}

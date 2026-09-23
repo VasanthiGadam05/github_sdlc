@@ -1,0 +1,9 @@
+{
+  "phase": 6,
+  "phase_name": "Code Review",
+  "agent": "code-review.prompt.md",
+  "completed_at": "2026-09-23T11:35:00Z",
+  "output_file": "docs/TC-001/code-review.md",
+  "output_archived_to": "outputs/TC-001/phase-6-code-review/output.md",
+  "status": "SUCCESS"
+}

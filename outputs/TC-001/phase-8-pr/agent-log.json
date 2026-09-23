@@ -1,0 +1,9 @@
+{
+  "phase": 8,
+  "phase_name": "PR Creation",
+  "agent": "pr.prompt.md",
+  "completed_at": "2026-09-23T12:00:00Z",
+  "output_file": "docs/TC-001/pr-description.md",
+  "output_archived_to": "outputs/TC-001/phase-8-pr/output.md",
+  "status": "SUCCESS"
+}

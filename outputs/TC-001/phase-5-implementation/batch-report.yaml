@@ -1,0 +1,27 @@
+status: SUCCESS
+test_case: TC-001
+tasks:
+  - id: T01
+    status: completed
+  - id: T02
+    status: completed
+  - id: T03
+    status: completed
+  - id: T04
+    status: completed
+  - id: T05
+    status: completed
+  - id: T06
+    status: completed
+  - id: T07
+    status: completed
+  - id: T08
+    status: completed
+  - id: T09
+    status: completed
+tests:
+  command: "python -m pytest tests -q"
+  passed: 15
+  failed: 0
+required_endpoints: []
+warnings: []

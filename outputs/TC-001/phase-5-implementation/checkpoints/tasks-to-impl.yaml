@@ -1,0 +1,32 @@
+test_case: TC-001
+phase: 5
+status: completed
+tasks:
+  - id: T01
+    files:
+      - src/docsync/__init__.py
+      - src/docsync/__main__.py
+  - id: T02
+    files:
+      - src/docsync/source_files.py
+  - id: T03
+    files:
+      - tests/test_source_files.py
+  - id: T04
+    files:
+      - src/docsync/report.py
+  - id: T05
+    files:
+      - tests/test_report.py
+  - id: T06
+    files:
+      - src/docsync/cli.py
+  - id: T07
+    files:
+      - tests/test_cli.py
+  - id: T08
+    files:
+      - tests/test_cli.py
+  - id: T09
+    files:
+      - outputs/TC-001/phase-5-implementation/output.md

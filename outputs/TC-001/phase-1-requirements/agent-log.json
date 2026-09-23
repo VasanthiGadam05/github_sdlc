@@ -1,0 +1,9 @@
+{
+  "phase": 1,
+  "phase_name": "Requirements",
+  "agent": "requirements.prompt.md",
+  "completed_at": "2026-09-23T10:32:00Z",
+  "output_file": "docs/TC-001/requirements.md",
+  "output_archived_to": "outputs/TC-001/phase-1-requirements/output.md",
+  "status": "SUCCESS"
+}
